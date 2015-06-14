@@ -26,6 +26,9 @@ var getElementsByClassName = function(className
   }
   // must access each child of docBody, see if they have className
   // and call getElementsByClassName on instance returning instances that follow the expected path
+  if (docBody.classList.contains(className)){ // push the body if it contains the desired class
+    classEls.push(docBody);
+  }
   recursiveGetElByClassName(docBody);
   return classEls;
 };
